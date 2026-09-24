@@ -1,4 +1,4 @@
-const CACHE = "planilha-fin-v2";
+const CACHE = "planilha-fin-v3";
 const ARQUIVOS = ["./", "./index.html", "./style.css", "./script.js", "./manifest.json", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", e => {
@@ -16,6 +16,12 @@ self.addEventListener("activate", e => {
 self.addEventListener("fetch", e => {
   if (e.request.method !== "GET") return;
   e.respondWith(
-    caches.match(e.request).then(r => r || fetch(e.request).catch(() => caches.match("./index.html")))
+    fetch(e.request)
+      .then(r => {
+        const copia = r.clone();
+        caches.open(CACHE).then(c => c.put(e.request, copia));
+        return r;
+      })
+      .catch(() => caches.match(e.request).then(r => r || caches.match("./index.html")))
   );
 });

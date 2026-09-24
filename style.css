@@ -16,7 +16,9 @@ h2{font-size:1rem;margin:0 0 12px}
 .sum b{font-size:1.35rem}
 .in{color:var(--in)}.out{color:var(--out)}
 form{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;align-items:end}
-label{display:flex;flex-direction:column;font-size:.82rem;color:var(--mut);gap:4px}
+form>*{min-width:0}
+label{display:flex;flex-direction:column;font-size:.82rem;color:var(--mut);gap:4px;min-width:0}
+input,select{width:100%}
 input,select,button{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);min-width:0}
 input:focus-visible,select:focus-visible,button:focus-visible{outline:2px solid var(--ac);outline-offset:1px}
 button{cursor:pointer;background:var(--ac);color:#fff;border-color:var(--ac);font-weight:600}
@@ -48,5 +50,5 @@ td.a{white-space:nowrap;text-align:right}
 .pair i{width:38%;max-width:22px;border-radius:3px 3px 0 0;min-height:2px}
 .col small{color:var(--mut);font-size:.75rem}
 .k{display:flex;gap:12px;font-size:.8rem;color:var(--mut);margin-top:8px}
-@media (max-width:760px){form{grid-template-columns:1fr 1fr}.charts{grid-template-columns:1fr}.sum b{font-size:1.05rem}}
+@media (max-width:760px){form{grid-template-columns:1fr 1fr}form>div{grid-column:1/-1}form>div button{flex:1}.charts{grid-template-columns:1fr}.sum b{font-size:1.05rem}}
 @media (prefers-reduced-motion:no-preference){button{transition:filter .15s}button:hover{filter:brightness(1.08)}}
