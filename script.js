@@ -83,3 +83,5 @@ $("csv").onclick=()=>{
   const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="lancamentos.csv";document.body.appendChild(a);a.click();a.remove();
 };
 render();
+
+if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{})})}
