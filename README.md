@@ -1,6 +1,12 @@
 # Planilha Financeira
 
-Controle de receitas e despesas feito com HTML, CSS e JavaScript puro, em um único arquivo.
+Controle de receitas e despesas feito com HTML, CSS e JavaScript puro.
+
+## Estrutura
+
+- `index.html`: estrutura da página
+- `style.css`: visual e tema claro/escuro
+- `script.js`: lógica, filtros, gráficos e exportação
 
 ## Recursos
 
