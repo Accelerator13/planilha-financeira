@@ -64,7 +64,9 @@ $("f").addEventListener("submit",e=>{
   if(!(v>0)||!$("desc").value.trim())return;
   const item={id:editId||Date.now(),data:$("data").value,desc:$("desc").value.trim(),cat:$("cat").value,tipo:$("tipo").value,valor:Math.round(v*100)/100};
   if(editId)dados=dados.map(l=>l.id===editId?item:l);else dados.push(item);
-  salvar();limpaForm();render();
+  salvar();limpaForm();
+  $("fMes").value="";$("fCat").value="";
+  render();
 });
 $("cancelar").onclick=limpaForm;
 $("corpo").addEventListener("click",e=>{

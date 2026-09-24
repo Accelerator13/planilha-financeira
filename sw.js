@@ -1,4 +1,4 @@
-const CACHE = "planilha-fin-v1";
+const CACHE = "planilha-fin-v2";
 const ARQUIVOS = ["./", "./index.html", "./style.css", "./script.js", "./manifest.json", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", e => {
